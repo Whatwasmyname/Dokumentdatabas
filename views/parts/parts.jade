@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+    h1= title
+    table.user_table
+        tr
+            th Parts Name
+            th Description
+            th Manufacturer
+            th Supplier
+            th Fits Carmodel
+            th In Price
+            th Out Price
+            th Set Out Price
+            th Delete
+        if parts_list && parts_list.length > 0
+            each parts in parts_list
+                tr
+                    td #{parts.parts_name}
+                    td #{parts.description}
+                    td #{parts.manufacturer}
+                    td #{parts.supplier}
+                    td #{parts.fits}
+                    td #{parts.inprice}
+                    td #{parts.outprice}
+                    td.center
+                        form(action='/parts/updateoutprice?userid=#{parts.id}', method='post')
+                            label.input_box(for='outprice')
+                                span
+                                input(type='text', name='outprice', id='outprice', required='true' value='#{parts.outprice}')
+                            label.input_box(for='submit')
+                                span
+                                input(type='submit', id='submit', value='Save')
+                    td.center
+                        a(href="/parts/delete?id=#{parts.id}")
+                            img.icon(src="/images/delete.png")
+        else
+            tr
+                td(colspan=7) No records

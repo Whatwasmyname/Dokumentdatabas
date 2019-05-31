@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+  body
+    .layout-container
+      .row
+        .col-xs-4
+          img.logo(src='/images/icon.png')
+        .col-xs-4
+          .title Mitt Mästerverk
+      .row
+        .col-xs-4
+          .menu-box
+            a.menu(href="/") Home
+            a.menu(href="/users") List Users
+            a.menu(href="/users/add") Add User
+            a.menu(href="/parts") List Parts
+            a.menu(href="/parts/add") Add Part
+            a.menu(href="/manufacturer") List Manufacturer
+            a.menu(href="/manufacturer/add") Add Manufacturer
+            a.menu(href="/supplier") List Supplier
+            a.menu(href="/supplier/add") Add Supplier
+            if userid
+
+    block content

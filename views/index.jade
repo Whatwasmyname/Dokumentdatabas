@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 Välkommen till #{title}
+  form.user_input(action='/search/user', method='post')
+    label(for='search')
+      span Search for Users
+      input(type='text', name='search', id='search')
+    label.control-label(for='submit')
+      span
+      input(type='submit', id='submit', value='Search')
+
+
+  form.user_input(action='/search/parts', method='post')
+    label(for='search')
+      span Search for Parts
+      input(type='text', name='search', id='search2')
+    label.control-label(for='submit2')
+      span
+      input(type='submit', id='submit2', value='Search')
+
+  form.user_input(action='/search/manufacturer', method='post')
+    label(for='search')
+      span Search for Manufacturer
+      input(type='text', name='search', id='search3')
+    label.control-label(for='submit3')
+      span
+      input(type='submit', id='submit3', value='Search')
+
+
+
+

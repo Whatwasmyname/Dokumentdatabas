@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    h1= title
+    table.user_table
+        tr
+            th Manufacturer Name
+            th Head Office
+            th Adress
+            th Delete
+        if manufacturer_list && manufacturer_list.length > 0
+            each manufacturer in manufacturer_list
+                tr
+                    td #{manufacturer.manufacturer_name}
+                    td #{manufacturer.headoffice}
+                    td #{manufacturer.adress}
+                        label.input_box(for='submit')
+                            span
+                            input(type='submit', id='submit', value='Save')
+                    td.center
+                        a(href="/manufacturer/delete?id=#{manufacturer.id}")
+                            img.icon(src="/images/delete.png")
+        else
+            tr
+                td(colspan=3) No records

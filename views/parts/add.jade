@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+    h1 Add Part
+    form.user_input(action='/parts', method='post')
+        label(for='part_name')
+            span Name the Part
+            input(type='text', name='parts_name', id='part_name', required='true')
+
+        label(for='description')
+            span Description
+            input(type='text', name='description', id='description', required='true')
+
+        label(for='manufacturer')
+            span Manufacturer
+            input(type='text', name='manufacturer', id='manufacturer', required='true')
+
+        label(for='supplier')
+            span Supplier
+            input(type='text', name='supplier', id='supplier', required='true')
+
+        label(for='fits')
+            span Fits
+            input(type='text', name='fits', id='fits', required='true')
+
+        label(for='inprice')
+            span In Price
+            input(type='text', name='inprice', id='inprice', required='true')
+
+        label(for='outprice')
+            span Out Price
+            input(type='text', name='outprice', id='outprice', required='true')
+
+        label.control-label(for='submit')
+            span
+            input(type='submit', id='submit', value='Save')
